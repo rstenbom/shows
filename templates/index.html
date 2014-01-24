@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}	
+	<table id="shows">		
+		<colgroup>
+	       <col span="1" style="width: 10%;">
+	       <col span="1" style="width: 25%;">
+	       <col span="1" style="width: 25%;">
+	       <col span="1" style="width: 10%;">
+	       <col span="1" style="width: 10%;">
+	       <col span="1" style="width: 10%;">	       
+	       <col span="1" style="width: 5%;">
+	    </colgroup>
+		<tbody>
+			<tr>
+				<th>Name</th>
+				<th>Leadtext</th>
+				<th>Synopsis</th>
+				<th>B-line</th>
+				<th>Url</th>
+				<th>Date</th>
+				<th>Start time</th>
+				<th></th>
+			</tr>
+			{% for show in shows %}
+			 	<tr>
+		            <td>{{ show.name }}</td>
+		            <td>{{ show.leadtext }}</td>
+		            <td>{{ show.synopsis }}</td>
+		            <td>{{ show.bline }}</td>
+		            <td>{{ show.url }}</td>
+		            <td>{{ show.date }}</td>
+		            <td>{{ show.start_time }}</td>
+		            <td><a class="delete" href="/show/delete/{{show.id}}">Delete</a></td>
+		        </tr>
+        	{% endfor %}        	
+        </tbody>
+	</table>
+	<div id="buttons-wrap">
+		<a class="button" href="#" id="addshow-button">Add new...</a>
+		&nbsp;|&nbsp;
+		<a class="button" target="_blank" href="/shows/xml">XML <span>(Right click -> Save as (...) to download)</span></a> 
+	</div>
+	{% include "new.html" %}
+{% endblock %}

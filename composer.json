@@ -1,0 +1,8 @@
+{
+    "require": {
+        "twig/twig": "1.*",
+        "torophp/torophp": "dev-master",
+        "php-activerecord/php-activerecord": "1.*",
+        "phpdocumentor/phpdocumentor": "2.*"
+    }
+}
